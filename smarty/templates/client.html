@@ -1,0 +1,553 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel=dns-prefetch href="//fonts.googleapis.com">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
+		<title>Gestion des Clients </title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" href="css/960gs/fluid.css"> <!-- 960.gs Grid System -->
+		<!-- The HTML5-Boilerplate CSS styling -->
+		<link rel="stylesheet" href="css/h5bp/normalize.css">
+         <!-- RECOMMENDED: H5BP reset styles -->
+		<link rel="stylesheet" href="css/h5bp/non-semantic.helper.classes.css"> <!-- RECOMMENDED: H5BP helpers (e.g. .clear or .hidden) -->
+		<link rel="stylesheet" href="css/h5bp/print.styles.css"> <!-- OPTIONAL: H5BP print styles -->
+		<!-- The main styling -->
+		<link rel="stylesheet" href="css/sprites.css"> <!-- STRONGLY RECOMMENDED: Basic sprites (e.g. buttons, jGrowl) -->
+		<link rel="stylesheet" href="css/header.css"> <!-- REQUIRED: Header styling -->
+		<link rel="stylesheet" href="css/navigation.css"> <!-- REQUIRED: Navigation styling -->
+		<link rel="stylesheet" href="css/content.css"> <!-- REQUIRED: Content styling -->
+		<link rel="stylesheet" href="css/footer.css"> <!-- REQUIRED: Footer styling -->
+		<link rel="stylesheet" href="css/typographics.css"> <!-- REQUIRED: Typographics -->
+		<link rel="stylesheet" href="css/ie.fixes.css"> <!-- OPTIONAL: Fixes for IE7 -->
+		<!-- Sprites styling -->
+		<link rel="stylesheet" href="css/sprite.forms.css"> <!-- SPRITE: Forms styling -->
+		<link rel="stylesheet" href="css/sprite.tables.css"> <!-- SPRITE: Tables styling -->
+		
+		<!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+		
+		<!-- All JavaScript at the bottom, except this Modernizr build incl. Respond.js
+		Respond is a polyfill for min/max-width media queries. Modernizr enables HTML5
+		elements & feature detects;
+		for optimal performance, create your own custom Modernizr build:
+		www.modernizr.com/download/ -->
+		<link href="css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+	</head>
+	
+	<body>
+		
+		<!-- Begin of #height-wrapper -->
+		<div id="height-wrapper">
+			<!-- Begin of header -->
+			<header>
+				<!-- Begin of the header toolbar -->
+				<div id="header_toolbar">
+					<div class="container_12">
+						<h1 class="grid_8">E-Shop Espace Admin</h1>
+						<!-- Start of right part -->
+						<div class="grid_4">
+							<!-- A small toolbar button -->
+							<div class="toolbar_small">
+							<div class="toolbutton">
+									<span>{$nbreMessage}</span>
+									<img src="img/icons/16x16/mail.png" width="16" height="16" alt="mail" >
+								</div>
+								<div class="toolbox" >
+									<span class="arrow"></span>
+									<h3>Your Messages</h3>
+									<ul class="mail">
+										{foreach $messages as $message}
+										<li id="{$message['id']}">
+											<a href="#?&id={$message['id']}" class="open_rep" id="{$message['id']}">
+											<strong>{$message['temps']}</strong>
+												<span class="objet3">{$message['objet']}</span>
+											<small class="email3">
+												From: {$message['email']}
+											</small></a>											
+										</li>										
+										{/foreach}
+									</ul>
+									<a class="inbox" href="contact.php">Go to inbox &raquo;</a>
+								</div>
+							</div> <!-- End of small toolbar button -->
+							
+							<!-- A large toolbar button -->
+							<div class="toolbar_large">
+								<div class="toolbutton">
+									<div class="toolicon">
+										<img src="img/icons/16x16/user.png" width="16" height="16" alt="user" >
+									</div>
+									<div class="toolmenu">
+										<div class="toolcaption">
+											<span>Welcome  : {$user}</span>
+										</div>
+										<!-- Start of menu -->
+										<div class="dropdown">
+											<ul>
+												<li>
+													<a href="#">Settings</a>
+												</li>
+												<li>
+													<a href="logout.php">Logout</a>
+												</li>
+											</ul>
+										</div> <!-- End of menu -->
+									</div>
+								</div>
+							</div> <!-- End of large toolbar button -->
+						</div>
+						<!-- End of right part -->
+					</div>
+				</div>
+				<!-- End of the header toolbar -->
+				
+				<!-- Start of the main header bar -->
+				<nav id="header_main">
+					<div class="container_12">
+						<!-- Start of the main navigation -->
+						<ul id="nav_main">
+							<li>
+								<a href="index.php">
+								<img src="img/icons/25x25/dark/computer-imac.png" width=25 height=25>
+								Accueil</a>
+								<ul>
+									<li>
+										<a href="dashboard.html">Dashboard</a>
+									</li>
+									<li>
+										<a href="404.html">404</a>
+									</li>
+									<li>
+										<a href="login.html">Login</a>
+									</li>
+								</ul>
+							</li>
+							<li >
+								<a href="produit.php">
+								<img src="img/icons/25x25/dark/blocks---images.png" width=25 height=25 alt="">
+								Produit</a>
+								<ul>
+									<li>
+										<a href="forms.html">Mise à jour</a>
+									</li>
+									<li>
+										<a href="gallery.html">Imprimer</a>
+									</li>
+									<li class="current">
+										<a href="#" class="open_aj">Ajouter Produit</a>
+									</li>
+									
+									
+								</ul>
+							</li>
+							<li>
+								<a href="commande.php">
+								<img src="img/icons/25x25/dark/robot.png" width=25 height=25 alt="">
+								Commande</a>
+								<ul>
+									<li>
+										<a href="">Transférer</a>
+									</li>
+									<li>
+										<a href="">Valider</a>
+									</li>
+									<li>
+										<a href="">Rejeter</a>
+									</li>																		
+								</ul>
+							</li>
+							<li class="current">
+								<a href="client.php">
+								<img src="img/icons/25x25/dark/user-comment.png" width=25 height=25 alt="">
+								Client</a>
+								<ul>
+									<li><a href="gallery.html">Imprimer</a></li>
+									<li class="current"><a href="#" class="open_aj">Ajouter Client</a></li>
+								</ul>
+							</li>
+							
+							<li>
+								<a href="fournisseur.php">
+								<img src="img/icons/25x25/dark/robot.png" width=25 height=25 alt="">
+								Fournisseur</a>
+								<ul>
+									<li>
+										<a href="#" class="open_aj">Ajouter</a>
+									</li>
+									<li>
+										<a href="pdfinfoAllFournisseur.php">Imprimer</a>
+									</li>																			
+								</ul>
+							</li>
+							<li>
+								<a href="contact.php">
+								<img src="img/icons/25x25/dark/user-comment.png" width=25 height=25 alt="">
+								Contact</a>
+							</li>
+						</ul>
+						<!-- End of the main navigation -->
+					</div>
+				</nav>
+				<div id="nav_sub"></div>
+			</header>
+			
+			<!-- Start of the content -->
+			<div role="main" class="container_12" id="content-wrapper">
+			
+				<!-- Start of the main content -->
+				<div id="main_content">
+				
+					<h2 class="grid_12">Client</h2>
+					<div class="clear"></div>
+					
+					<div class="grid_12">
+						<div class="box">
+							<div class="header">
+								<img src="img/icons/packs/fugue/16x16/shadeless/table-excel.png" width="16" height="16">
+								<h3>Liste des Clients</h3><span></span>
+							</div>
+							<div class="content">
+								<table id="table-example" class="table">
+									<thead>
+										<tr>
+											<th>Id </th>
+											<th>Nom </th>
+											<th>Prénom</th>
+											<th>Date Naissance</th>
+											<th>Télephone</th>
+                                            <th>Ville</th>
+                                            <th>Adresse</th>
+											 <th>Email</th>
+                                            <th>Sexe</th>
+											
+                                            <th >Action</th>
+										</tr>
+									</thead>
+									<tbody>
+									{foreach $clients as $client}
+										<tr class="gradeX" align="center" id = "{$client['id']}">
+											<td class ="id" >{$client.id}</td>
+											<td class ="nom" >{$client.nom}</td>
+											<td class ="prenom" >{$client.prenom}</td>
+											<td class ="date_naissance"  >{$client.date_naissance}</td>
+											<td class ="telephone" >{$client.telephone}</td>
+                                            <td class ="ville">{$client.ville}</td>
+                                            <td class ="adresse" >{$client.adresse}</td>
+											<td class ="email" >{$client.email}</td>
+                                            <td class ="sexe" >{$client.sexe}</td>
+                                            <td><a  href="#?&id={$client['id']}" class="open_mod" id="{$client['id']}"  > <IMG SRC=img/edit.png border=0 alt=Modifier ></a>
+			 <a href="deletclt.php?&id={$client['id']}"><IMG SRC=img/delete.png border=0 alt=Supprimer  ></a>  <a href="pdfinfoclt.php?&id={$client['id']}"><IMG SRC=img/print1.png border=0 alt=Imprimer  ></a></td> 
+                                            
+										</tr>
+										{/foreach}
+										
+									</tbody>
+								</table>
+							</div> <!-- End of .content -->
+							<div class="clear"></div>
+						</div> <!-- End of .box -->
+					</div> <!-- End of .grid_12 -->
+					
+					
+							 <!-- End of .content -->
+							<div class="clear"></div>
+						</div> <!-- End of .box -->
+					</div> <!-- End of .grid_12 -->
+					
+					<div class="clean"></div>
+					
+				</div> <!-- End of #main_content -->
+				<div class="clean"></div>
+				
+			</div> <!-- End of #content-wrapper -->
+			<div class="clear"></div>
+			
+		</div> <!-- End of #height-wrapper -->
+			
+		<!-- Start of footer-->
+		<footer>
+			<div class="container_12">
+				Développé par E-shop/FIRSFO-2013.
+			</div>
+		</footer> <!-- End of footer-->
+		
+		<!-- JavaScript at the bottom for fast page loading -->
+		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.js"><\/script>')</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+		<script>window.jQuery.ui || document.write('<script src="js/libs/jquery-ui-1.8.16.min.js"><\/script>')</script>
+		
+		<!-- scripts concatenated and minified via build script -->
+		<script defer src="js/plugins.js"></script> <!-- REQUIRED: Different own jQuery plugnis -->
+		<script defer src="js/mylibs/jquery.ba-resize.js"></script> <!-- RECOMMENDED when using sidebar: page resizing -->
+		<script defer src="js/mylibs/jquery.easing.1.3.js"></script> <!-- RECOMMENDED: box animations -->
+		<script defer src="js/mylibs/jquery.chosen.js"></script>
+		<script defer src="js/mylibs/jquery.ui.touch-punch.js"></script> <!-- RECOMMENDED: touch compatibility -->
+		<script defer src="js/mylibs/jquery.dataTables.js"></script>
+		<script defer src="js/script.js"></script> <!-- REQUIRED: Generic scripts -->
+		<!-- end scripts -->
+		<script defer>
+			$(window).load(function() {
+				$('#table-example').dataTable();
+				$(window).resize();
+			});
+			
+			$(function(){
+	$("#dialog_aj").dialog({
+		autoOpen: false, 
+		height: 550,
+		width : 650,
+		resizable : false
+	 });
+	  $(".open_aj").click(function(){
+			$("#dialog_aj").dialog("open");
+	   });
+ });
+ 
+ //=======================================================================
+//=================== script de modification ============================
+//=======================================================================
+$(function(){
+	$("#dialog").dialog({
+		autoOpen: false, 
+		height: 680,
+		width : 800,
+		resizable : false
+	});
+	$(".open_mod").click(function(){
+		var id = $(this).attr("id");
+		var nom = $("#"+id+" .nom").text();
+		var prenom =$("#"+id+" .prenom").text();
+		var date_naissance =$("#"+id+" .date_naissance").text();
+		var telephone =$("#"+id+" .telephone").text();
+		var ville =$("#"+id+" .ville").text();
+		var adresse =$("#"+id+" .adresse").text();
+		var email =$("#"+id+" .email").text();
+		var sexe=$("#"+id+" .sexe").text();
+
+		$("#id").val(id);
+		$("#nom").val(nom);
+		$("#prenom").val(prenom);
+		$("#date_naissance").val(date_naissance);
+		$("#telephone").val(telephone);
+		$("#ville").val(ville);
+		$("#adresse").val(adresse);
+		$("#email").val(email);
+		$("#sexe").val(sexe);
+		
+		$("#dialog").dialog("open");
+	});
+})
+	$(function() {
+    	$( "#date_naissance1" ).datepicker();
+  	});
+
+  	$(function(){
+	$("#dialog_rep").dialog({
+		autoOpen: false, 
+		height: 550,
+		width : 550,
+		resizable : false
+	 });
+	 
+	$(".open_rep").click(function(){
+	
+		var id = $(this).attr("id");
+		var id_email = $("#"+id+" .email3").text();
+		var id_obj = $("#"+id+" .objet3").text();
+
+
+		$("#id3").val(id);
+		$("#email3").val(id_email);
+		$("#objet3").val(id_obj);
+		
+		
+		$("#dialog_rep").dialog("open");
+	});
+			
+	   });
+
+</script>
+		
+		
+	 <!-- Form pour ajouter/Modifier les clients -->
+<div id="dialog" title="Modifier un Client">          
+    <form id='form_modif' method="POST" action='modificationcltOK.php' enctype="multipart/form-data">
+			<table width="100%" align ="center" class="t" cellpadding="10">
+			<tr cellspacing='2'>
+			<input type="hidden" name='id' id="id"/>
+				<td><div class="form-row">
+						<p class="form-label">Nom</p>
+						<div class="form-item"><input type="text" placeholder="Nom" name='nom' id="nom"/>
+						</div>
+					</div>
+				</td>
+				<td><div class="form-row">
+						<p class="form-label">Prenom</p>
+						<div class="form-item"><input type="text" placeholder="Prenom" name="prenom"
+							id="prenom" /></div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+			<td><div class="form-row">
+			<p class="form-label">Date Naissance</p>
+			<div class="form-item"><input type="text" placeholder="Date Naissance" name="date_naissance" 
+				id="date_naissance"/>
+			</div></td>
+			<td><div class="form-row">
+			<p class="form-label">Telephone</p>
+			<div class="form-item"><input type="text" placeholder="Telephone" name="telephone" id="telephone"/></div>
+			</div></td>
+			<tr>
+			<td>
+				<div class="form-row">
+			<p class="form-label">Ville</p>
+			<select name="ville" width="250" style="width: 250px">
+				{foreach $villes as $ville}
+
+  				<option value="{$ville.libelle}">{$ville.libelle}</option>
+  				{/foreach}			
+			</select>
+		</div>
+		</td>
+			<td><div class="form-row">
+			<p class="form-label">Adresse</p>
+			<div class="form-item"><input type ="text" placeholder="Adresse" name='adresse' id="adresse"/></div>
+			</div></td>
+			</tr>
+
+			<tr>
+			<td>
+			<div class="form-row">
+			<p class="form-label">Email</p>
+			<div class="form-item"><input type ="text" placeholder="Email" name='email' id="email"/></div>
+			</div>
+
+			</td>
+			<td><div class="form-row">
+			<p class="form-label">Sexe</p>
+			<div class="form-item"><SELECT NAME="sexe" id="sexe">
+			<OPTION VALUE="Femme" selected> Femme
+			<OPTION VALUE="Homme"> Homme
+			</SELECT>
+			</div>
+			</div></td>
+			</tr>
+			<tr>
+			<td>
+				<input type="submit" value="Modifier">
+			</td>
+			<td>
+				<input type="reset" value='Renitialiser' class="button blue"/>			
+			</td>
+		</tr>
+			</table></br>
+
+	</form>    
+</div>
+		
+        <!-- Form pour ajouter/Modifier les clients -->
+       <div id="dialog_aj" title="Ajouter un Client">
+		<form id='form_aj' method="POST" action='ajoutCltOK.php' enctype="multipart/form-data">
+			<table width="100%" align ="center" class="t" cellpadding="10">
+			<tr cellspacing='2'>
+				<td><div class="form-row">
+						<p class="form-label">Nom</p>
+						<div class="form-item"><input type="text" placeholder="Nom" name='nom' id="nom1"/>
+						</div>
+					</div>
+				</td>
+				<td><div class="form-row">
+						<p class="form-label">Prenom</p>
+						<div class="form-item"><input type="text" placeholder="Prenom" name="prenom"
+							id="prenom1" /></div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+			<td><div class="form-row">
+			<p class="form-label">Date Naissance</p>
+			<div class="form-item"><input type="text" placeholder="Date Naissance" name="date_naissance" 
+				id="date_naissance1"/>
+			</div></td>
+			<td><div class="form-row">
+			<p class="form-label">Telephone</p>
+			<div class="form-item"><input type="text" placeholder="Telephone" name="telephone" id="telephone1"/></div>
+			</div></td>
+			<tr>
+			<td>
+				<div class="form-row">
+			<p class="form-label">Ville</p>
+			<select name="ville" id="ville" width="250" style="width: 250px">
+				{foreach $villes as $ville}
+
+  				<option value="{$ville.libelle}">{$ville.libelle}</option>
+  				{/foreach}			
+			</select>
+		</div>
+		</td>
+			<td><div class="form-row">
+			<p class="form-label">Adresse</p>
+			<div class="form-item"><input type ="text" placeholder="Adresse" name='adresse' id="adresse1"/></div>
+			</div></td>
+			</tr>
+
+			<tr>
+			<td>
+			<div class="form-row">
+			<p class="form-label">Email</p>
+			<div class="form-item"><input type ="text" placeholder="Email" name='email' id="email1"/></div>
+			</div>
+
+			</td>
+			<td><div class="form-row">
+			<p class="form-label">Sexe</p>
+			<div class="form-item"><SELECT NAME="sexe" id="sexe1">
+			<OPTION VALUE="Femme" selected> Femme
+			<OPTION VALUE="Homme"> Homme
+			</SELECT>
+			</div>
+			</div></td>
+			</tr>
+			<tr>
+			<td>
+				<input type="submit" value="Ajouter">
+			</td>
+			<td>
+				<input type="reset" value='Renitialiser' class="button blue"/>			
+			</td>
+		</tr>
+			</table></br>
+
+	</form>
+     </div>
+     <!-- boite de dialog reponse -->
+<div id="dialog_rep" title="Répondre au message ">
+       
+		<form  method="POST" action='send2.php' enctype="multipart/form-data">
+					
+			<p class="form-label">Email client:</p>
+			<input type="hidden"  name='id' id ="id3"/>
+					<input type="text"  name='email' id ="email3"/>
+					<p class="form-label">Objet:</p>
+					<input type="text"  name='objet' id="objet3" />
+			<p >La réponse:</p>
+			<textarea rows="4" cols="50" name="reponse">
+        
+           </textarea>
+
+		    <input type="submit" value="répondre">  <input  type="reset"   value='Renitialiser' class="button blue" />
+			       
+					
+		</form>
+</div>
+<!-- Fin boite de dialog reponse -->
+	</body>
+</html>

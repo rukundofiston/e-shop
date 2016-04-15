@@ -1,0 +1,66 @@
+{include file="header.html"}
+		<body>
+			<div data-role="page">
+
+			    <div data-role="header" data-position="fixed"> 
+<a href="Mobileindex.php" data-role="button" rel="external">Accueil</a>
+					<h1>{$title}</h1>
+					<a href="Mobileindex.php" data-role="button" rel="external">Accueil</a>
+				</div>
+
+<!-- Example page styling (not required) -->
+    
+	<div data-role="content">	
+	<form action="currency_converter1.php" method="get">
+		<ul data-role="listview">
+			
+			<li data-role="fieldcontain">
+	        	<label for="search">Entrez un montant:</label>
+	         	<input  id="mont" type="text" name="amount" value=""  />
+			</li>
+		</ul></br>
+		<li data-role="fieldcontain">
+				<label for="from" class="select">De:</label>
+				<select name="from" id="list_currency_from" data-native-menu="false" class="selectClass">
+					<option value="EUR">EUR</option>
+					<option value="USD">USD</option>
+					<option value="GBP">GBP</option>
+					<option value="CAD">GPY</option>
+					<option value="MAD">MAD</option>
+				</select>
+				
+				
+			</li>
+		<li data-role="fieldcontain">
+				<label for="to" class="select">A:</label>
+				<select name="to" id="select-choice-a" class="selectClass" data-native-menu="false">
+					<option value="EUR">EUR</option>
+					<option value="USD">USD</option>
+					<option value="GBP">GBP</option>
+					<option value="CAD">GPY</option>
+					<option value="MAD">MAD</option>
+				</select>
+			</li>
+		<div>
+		 <center><button data-role="submit" data-inline="false" data-theme="a" data-icon="arrow-r">Convertir</button> </div>
+		<center>{$res}</center>
+		</center>
+				<ul data-role="listview">
+			
+		
+		</ul></br>
+	</form>
+	{include file="service.html"}
+	
+		</div>	<!-- /content -->
+	
+	
+
+	
+	{include file="footer.html"}
+
+	
+</div><!-- /page -->
+
+</body>
+</html>

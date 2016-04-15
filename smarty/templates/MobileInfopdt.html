@@ -1,0 +1,129 @@
+<head>
+
+	<title></title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.min.css" />
+	<link rel="stylesheet" href="styles/photoswipe.css" />
+	<link rel="stylesheet" href="styles/woody.css" />
+	<link rel="stylesheet" href="styles/style.css" />
+	<script src="scripts/jquery.js"></script>
+	<script src="scripts/slider.js"></script>
+	<script src="scripts/jquery-mobile.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="scripts/jquery.raty.min.js"></script>
+	<script type="text/javascript" src="../scripts/code.photoswipe-3.0.5.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Terminal+Dosis:800,600' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<style>
+	.content_div {
+    display: none;
+}
+.content_div:first-child {
+    display: block;
+}	
+.nav{
+background:black;
+}
+	</style>
+	<script>
+	$(document).delegate('[data-role="navbar"] a', 'click', function () {
+    $(this).addClass('ui-btn-active');
+    $('.content_div').hide();
+    $('#' + $(this).attr('data-href')).show();
+    return false;//stop default behavior of link
+});
+$(document).delegate('.ui-navbar a', 'click', function () {
+    $(this).addClass('ui-btn-active');
+    $('.content_div').hide();
+    $('#' + $(this).attr('data-href')).show();
+});
+	</script>
+		<script>
+		$(document).delegate('[data-role="navbar"] a', 'click', function () {
+	    $(this).addClass('ui-btn-active');
+	    $('.content_div').hide();
+	    $('#' + $(this).attr('data-href')).show();
+	    return false;//stop default behavior of link
+	});
+	$(document).delegate('.ui-navbar a', 'click', function () {
+	    $(this).addClass('ui-btn-active');
+	    $('.content_div').hide();
+	    $('#' + $(this).attr('data-href')).show();
+	});
+		</script>
+	
+
+
+</head>
+    <body >
+    	<div data-role="page">
+		<div data-role="header" data-position="fixed"> 
+			    	<a href="" data-rel="back" data-role="button">Retour</a>	
+					<a href="Mobileindex.php" data-role="button" rel="external">Accueil</a>
+					<h1>Bienvenu &agrave; E-Shop </h1>
+					
+				</div>
+
+			<div data-role="navbar">
+		    <ul class="ulinfo">
+		        <li><a href="#" data-href="a" class="nav">D&eacute;tails</a></li>
+				<li><a href="#" data-href="c"class="nav">Gallerie</a></li>
+					
+		    </ul>
+		</div><!-- /navbar -->
+
+		<div id="a" class="content_div"></br>
+					<ul data-role="listview">
+					  	
+						<li><a href="#"><h2>Libelle</h2></br>
+						<p>{$liste->getLibelle()}</p></a></li>
+						<li><a href="#"><h2>Description</h2></br>
+							<p>{$liste->getDescription()}</p></a>
+						</li>
+						<li><a href="#"><h2>Prix</h2></br>
+							<p>{$liste->getPrix()}</p></a>
+						</li>
+					</ul>
+							</div>
+		<div id="b" class="content_div"></div>
+		<div id="c" class="content_div">
+
+              
+           		<div class="slider">
+		<ul class="img">
+		{foreach from=$liste->getPhotos() item=i}
+<li><img src="{$i}" /></li>
+{/foreach} 
+	  </ul>
+	</div>
+               
+        </div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#a").show();
+	});
+</script>
+
+<div data-role="footer" data-position="fixed">		
+	<div data-role="navbar" >
+		
+		<ul>
+           <li><a href="about.php" data-icon="gear" >A propos</a></li>
+           
+		
+		   <li><a href="panierMobile.php?id=1&id_produit={$liste->getId()}" data-icon="plus" >Ajouter au Panier</a></li>
+		 
+			 
+		  
+		   
+           <li><a href="contactMobile.php" rel="external" data-icon="info">Contacter</a></li>
+          
+         </ul>
+       
+	</div><!-- /navbar -->
+</div>
+</div>
+</body>
+		</html>

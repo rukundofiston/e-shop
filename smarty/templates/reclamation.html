@@ -1,0 +1,45 @@
+﻿{include file="header.html"}
+		<body>
+			<div data-role="page">
+
+			    <div data-role="header" data-position="fixed"> 
+			    	<a href="Mobileindex.php" data-role="button" rel="external">Accueil</a>
+					<h1>{$title}</h1>
+					
+				</div>
+					
+			<div data-role="content">	
+				<ul data-role="listview" data-theme="g">
+					<li data-role="list-divider">Reclamation:</li> 
+				</ul>
+				</br>
+		<form action="reclamation2.php" method="get">
+		<fieldset data-role="controlgroup">
+	
+			<legend></legend>
+			<p>
+				Si notre application ne contient pas les renseignements souhaites, ou si vous voulez nous adresser des suggestions ou des observations, contactez-nous en remplissant le formulaire suivant : 
+			</p>
+			<label>Objet:</label>
+			<input type="text" name="objet" placeholder="Objet" >
+			<label>Email:</label>
+			<input type="email" name="email" placeholder="Email" >
+			<label>Reclamation:</label>
+			<textarea name="msg" placeholder="Tapez votre reclamation"></textarea>
+			
+		</fieldset>
+		
+		<center><button data-role="submit" data-inline="true" data-theme="a" data-icon="arrow-r">Envoyer</button></center>
+	</form>
+	<p>{$msg}</p>
+	</br>
+	
+	
+	 
+	{include file="service.html"}
+	</div><!-- /content -->
+			
+							{include file="footer.html"}
+</div>
+</body>
+		</html>

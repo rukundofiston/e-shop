@@ -1,0 +1,31 @@
+{include file="header.html"}	
+<body>
+<div data-role="page">
+
+			    <div data-role="header" data-position="fixed"> 
+			    	<a href="" data-rel="back" data-role="button">Retour</a>
+					<a href="Mobileindex.php" data-role="button" rel="external">Accueil</a>
+					<h1>Bienvenu à E-Shop </h1>					
+				</div>
+					
+					
+			<div data-role="content">
+				<form action="validerPanier.php" method="get">
+				<ul data-role="listview" data-inset="false" id="HotelList">
+                	{foreach $paniers as $panier}
+				    <li>				    	
+				        <input type="checkbox" name="choix[]" value="{$panier->getId_p()}" class="custom"/>			            
+						<p>
+							<h2>{$panier->getLibelle()}</h2>
+					       	<h3>{$panier->getPrix()}</h3>
+					    </p>
+				    </li>
+					{/foreach}
+					<button data-role="submit" data-inline="true" data-theme="a" data-icon="arrow-r">Valider Panier</button>
+				</ul>
+				</form>
+			{include file="service.html"}	
+			</div><!-- /content -->								
+{include file="footer.html"}
+</body>
+</html>

@@ -1,0 +1,28 @@
+{include file="header.html"}	
+<body>
+<div data-role="page">
+
+			    <div data-role="header" data-position="fixed"> 
+			    	<a href="" data-rel="back" data-role="button">Retour</a>
+					<a href="Mobileindex.php" data-role="button" rel="external">Accueil</a>
+					<h1>Bienvenu à E-Shop </h1>					
+				</div>
+					
+					
+			<div data-role="content">	
+				<ul data-role="listview" data-inset="false" id="HotelList">
+                	{foreach $listes as $liste}
+				    <li>				    		
+				        <a href="mobileInfopdt.php?id={$liste.id}" rel="external">
+				            <img src="{$liste.photos[0]}" />
+				            <h3>{$liste.libelle}</h3>
+							<p>{$liste.prix}</p>
+				        </a>
+				    </li>
+					{/foreach}
+				</ul>
+			{include file="service.html"}	
+			</div><!-- /content -->								
+{include file="footer.html"}
+</body>
+</html>

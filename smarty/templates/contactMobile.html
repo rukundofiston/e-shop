@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html> 
+<html> 
+	{include file="header.html"}
+	
+    <body>
+    	<div data-role="page">
+
+    	    <div data-role="header" data-position="fixed"> 
+    	    	<a href="Mobileindex.php" data-role="button" rel="external">Accueil</a>
+    			<h1>{$title}</h1>
+
+    		</div>
+	<div data-role="content">	
+	<h3 style="color: rgb(167, 247, 140)">Contactez-nous</h3>
+	<p>Contactez-nous pour toute demande d'information ou de renseignement sur les différents services proposés par notre application</p>
+	<label><b>Tél :</b>0677741666</label> <br>
+	<label><b>Email :</b>groupe1irisiprojetintranet@gmail.com</label>
+	{include file="service.html"}
+	 </div><!-- /content -->
+
+	{include file="footer.html"}
+</div><!-- /page -->
+<script type="text/javascript">
+			$(function() {
+				$('#default').raty();
+            });
+		</script>
+</body>
+</html>

@@ -1,0 +1,555 @@
+<!doctype html> <!--
+paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<!-- DNS prefetch -->
+		<link rel=dns-prefetch href="//fonts.googleapis.com">
+		<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+		More info: h5bp.com/b/378 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<title>Gestion des Produits </title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		<!-- Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory:
+		mathiasbynens.be/notes/touch-icons -->
+		
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/960gs/fluid.css"> <!-- 960.gs Grid System -->
+		<!-- The HTML5-Boilerplate CSS styling -->
+		<link rel="stylesheet" href="css/h5bp/normalize.css">
+         <!-- RECOMMENDED: H5BP reset styles -->
+		<link rel="stylesheet" href="css/h5bp/non-semantic.helper.classes.css"> <!-- RECOMMENDED: H5BP helpers (e.g. .clear or .hidden) -->
+		<link rel="stylesheet" href="css/h5bp/print.styles.css"> <!-- OPTIONAL: H5BP print styles -->
+		<!-- The main styling -->
+		<link rel="stylesheet" href="css/sprites.css"> <!-- STRONGLY RECOMMENDED: Basic sprites (e.g. buttons, jGrowl) -->
+		<link rel="stylesheet" href="css/header.css"> <!-- REQUIRED: Header styling -->
+		<link rel="stylesheet" href="css/navigation.css"> <!-- REQUIRED: Navigation styling -->
+		<link rel="stylesheet" href="css/content.css"> <!-- REQUIRED: Content styling -->
+		<link rel="stylesheet" href="css/footer.css"> <!-- REQUIRED: Footer styling -->
+		<link rel="stylesheet" href="css/typographics.css"> <!-- REQUIRED: Typographics -->
+		<link rel="stylesheet" href="css/ie.fixes.css"> <!-- OPTIONAL: Fixes for IE7 -->
+		<!-- Sprites styling -->
+		<link rel="stylesheet" href="css/sprite.forms.css"> <!-- SPRITE: Forms styling -->
+		<link rel="stylesheet" href="css/sprite.tables.css"> <!-- SPRITE: Tables styling -->
+		
+		<!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+		
+		<!-- All JavaScript at the bottom, except this Modernizr build incl. Respond.js
+		Respond is a polyfill for min/max-width media queries. Modernizr enables HTML5
+		elements & feature detects;
+		for optimal performance, create your own custom Modernizr build:
+		www.modernizr.com/download/ -->
+		<link href="css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+	
+	</head>
+	
+	<body>
+		
+		<!-- Begin of #height-wrapper -->
+		<div id="height-wrapper">
+			<!-- Begin of header -->
+			<header>
+				<!-- Begin of the header toolbar -->
+				<div id="header_toolbar">
+					<div class="container_12">
+						<h1 class="grid_8">E-Shop Espace Admin</h1>
+						<!-- Start of right part -->
+						<div class="grid_4">
+							<!-- A small toolbar button -->
+							<div class="toolbar_small">
+								<div class="toolbutton">
+									<span>{$nbreMessage}</span>
+									<img src="img/icons/16x16/mail.png" width="16" height="16" alt="mail" >
+								</div>
+								<div class="toolbox" >
+									<span class="arrow"></span>
+									<h3>Your Messages</h3>
+									<ul class="mail">
+										{foreach $messages as $message}
+										<li id="{$message['id']}">
+											<a href="#?&id={$message['id']}" class="open_rep" id="{$message['id']}">
+											<strong>{$message['temps']}</strong>
+												<span class="objet3">{$message['objet']}</span>
+											<small class="email3">
+												From: {$message['email']}
+											</small></a>											
+										</li>										
+										{/foreach}
+									</ul>
+									<a class="inbox" href="contact.php">Go to inbox &raquo;</a>
+								</div>
+							</div> <!-- End of small toolbar button -->
+							
+							<!-- A large toolbar button -->
+							<div class="toolbar_large">
+								<div class="toolbutton">
+									<div class="toolicon">
+										<img src="img/icons/16x16/user.png" width="16" height="16" alt="user" >
+									</div>
+									<div class="toolmenu">
+										<div class="toolcaption">
+											<span>Welcome  :{$user}</span>
+										</div>
+										<!-- Start of menu -->
+										<div class="dropdown">
+											<ul>
+												<li>
+													<a href="#">Settings</a>
+												</li>
+												<li>
+													<a href="logout.php">Logout</a>
+												</li>
+											</ul>
+										</div> <!-- End of menu -->
+									</div>
+								</div>
+							</div> <!-- End of large toolbar button -->
+						</div>
+						<!-- End of right part -->
+					</div>
+				</div>
+				<!-- End of the header toolbar -->
+				
+				<!-- Start of the main header bar -->
+				<nav id="header_main">
+					<div class="container_12">
+						<!-- Start of the main navigation -->
+						<ul id="nav_main">
+							<li>
+								<a href="index.php">
+								<img src="img/icons/25x25/dark/computer-imac.png" width=25 height=25 alt="">
+								Accueil</a>
+								<ul>
+									<li>
+										<a href="dashboard.html">Dashboard</a>
+									</li>
+									<li>
+										<a href="404.html">404</a>
+									</li>
+									<li>
+										<a href="login.html">Login</a>
+									</li>
+								</ul>
+							</li>
+							<li class="current">
+								<a href="produit.php">
+								<img src="img/icons/25x25/dark/blocks---images.png" width=25 height=25 alt="">
+								Produit</a>
+								<ul>
+									<li>
+										<a href="forms.html">Mise à jour</a>
+									</li>
+									<li>
+										<a href="gallery.html">Imprimer</a>
+									</li>
+									<li class="current">
+										<a href="#" class="open_aj">Ajouter Produit</a>
+									</li>
+									
+									
+								</ul>
+							</li>
+							<li>
+								<a href="commande.php">
+								<img src="img/icons/25x25/dark/robot.png" width=25 height=25 alt="">
+								Commande</a>
+								<ul>
+									<li>
+										<a href="">Transférer</a>
+									</li>
+									<li>
+										<a href="">Valider</a>
+									</li>
+									<li>
+										<a href="">Rejeter</a>
+									</li>																		
+								</ul>
+							</li>
+							<li >
+								<a href="client.php">
+								<img src="img/icons/25x25/dark/user-comment.png" width=25 height=25 alt="">
+								Client</a>
+								<ul>
+									<li><a href="gallery.html">Imprimer</a></li>
+									<li class="current"><a href="#" class="open_aj">Ajouter Client</a></li>
+								</ul>
+							</li>
+							
+							<li>
+								<a href="fournisseur.php">
+								<img src="img/icons/25x25/dark/robot.png" width=25 height=25 alt="">
+								Fournisseur</a>
+								<ul>
+									<li>
+										<a href="#" class="open_aj">Ajouter</a>
+									</li>
+									<li>
+										<a href="pdfinfoAllFournisseur.php">Imprimer</a>
+									</li>																			
+								</ul>
+							</li>
+							<li>
+								<a href="contact.php">
+								<img src="img/icons/25x25/dark/user-comment.png" width=25 height=25 alt="">
+								Contact</a>
+							</li>
+						</ul>
+						<!-- End of the main navigation -->
+					</div>
+				</nav>
+				<div id="nav_sub"></div>
+			</header>
+			
+			<!-- Start of the content -->
+			<div role="main" class="container_12" id="content-wrapper">
+			
+				<!-- Start of the main content -->
+				<div id="main_content">
+				
+					<h2 class="grid_12">Produit</h2>
+					<div class="clear"></div>
+					
+					<div class="grid_12">
+						<div class="box">
+							<div class="header">
+								<img src="img/icons/packs/fugue/16x16/shadeless/table-excel.png" width="16" height="16">
+								<h3>Liste des Produits</h3><span></span>
+							</div>
+							<div class="content">
+								<table id="table-example" class="table">
+									<thead>
+										<tr>
+											<th>Id </th>
+											<th>Id pdt Fr</th>
+											<th>Fournisseur</th>
+											<th>Libelle</th>
+											<th>Prix</th>
+                                            <th>Description</th>
+                                            <th>Qté stock</th>
+                                            <th>catégorie</th>
+                                            <th >Action</th>
+										</tr>
+									</thead>
+									<tbody>
+									{foreach $produits as $produit}
+										<tr class="gradeX" align="center" id="{$produit['id']}">
+											<td class ="id" >{$produit.id}</td>
+											<td class ="id_p" >{$produit.id_p}</td>
+											<td hidden="true" class="id_fr">{$produit.id_fr}</td>
+											<td>{$produit.nomfr}</td>
+											<td class ="libelle"  >{$produit.libelle}</td>
+											<td class ="prix" >{$produit.prix}</td>
+                                            <td class ="description">{$produit.description}</td>
+                                            <td class ="qte_stock" >{$produit.qte_stock}</td>
+											<td hidden="true" class="photos">{$produit.photos[0]}</td>
+											<td hidden="true" class="id_cat">{$produit.id_cat}</td>
+                                            <td >{$produit.libellecat}</td>
+											<div hidden="true" class="test" id="{$produit['id']}"title="Catalogue Produit">{foreach from=$produit.photos item=i}
+											<img  alt="img" src="{$i}"style="width:300px; height: 200px;" >
+											
+											{/foreach}
+											</div>
+                                            <td><a  href="#?&id={$produit['id']}" class="open_mod" id="{$produit['id']}"  > <IMG SRC=img/edit.png border=0 alt=Modifier ></a>
+			 <a href="delet.php?&id={$produit['id']}"><IMG SRC=img/delete.png border=0 alt=Supprimer  ></a>  <a href="pdfinfopdt.php?&id={$produit['id']}"><IMG SRC=img/print1.png border=0 alt=Imprimer  ></a><a  href="#?&id={$produit['id']}" class="open_det" id="{$produit['id']}"  > <IMG SRC=img/details.png border=0 alt=detail ></a></td> 
+                                            
+										</tr>
+										{/foreach}
+										
+									</tbody>
+								</table>
+							</div> <!-- End of .content -->
+							<div class="clear"></div>
+						</div> <!-- End of .box -->
+					</div> <!-- End of .grid_12 -->
+					
+					
+							 <!-- End of .content -->
+							<div class="clear"></div>
+						</div> <!-- End of .box -->
+					</div> <!-- End of .grid_12 -->
+					
+					<div class="clean"></div>
+					
+				</div> <!-- End of #main_content -->
+				<div class="clean"></div>
+				
+			</div> <!-- End of #content-wrapper -->
+			<div class="clear"></div>
+			
+		</div> <!-- End of #height-wrapper -->
+			
+		<!-- Start of footer-->
+		<footer>
+			<div class="container_12">
+				Développé par E-shop/FIRSFO-2013.
+			</div>
+		</footer> <!-- End of footer-->
+		
+		
+		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.js"><\/script>')</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+		<script>window.jQuery.ui || document.write('<script src="js/libs/jquery-ui-1.8.16.min.js"><\/script>')</script>
+		
+		<!-- scripts concatenated and minified via build script -->
+		<script defer src="js/plugins.js"></script> <!-- REQUIRED: Different own jQuery plugnis -->
+		<script defer src="js/mylibs/jquery.ba-resize.js"></script> <!-- RECOMMENDED when using sidebar: page resizing -->
+		<script defer src="js/mylibs/jquery.easing.1.3.js"></script> <!-- RECOMMENDED: box animations -->
+		<script defer src="js/mylibs/jquery.chosen.js"></script>
+		<script defer src="js/mylibs/jquery.ui.touch-punch.js"></script> <!-- RECOMMENDED: touch compatibility -->
+		<script defer src="js/mylibs/jquery.dataTables.js"></script>
+		<script defer src="js/script.js"></script> <!-- REQUIRED: Generic scripts -->
+		<!-- end scripts -->
+		<script defer>
+			$(window).load(function(){
+				$('#table-example').dataTable();
+				$(window).resize();
+			});
+			
+			$(function(){
+	$("#dialog_aj").dialog({
+		autoOpen: false, 
+		height: 550,
+		width : 550,
+		resizable : false
+	 });
+	  $(".open_aj").click(function(){
+			$("#dialog_aj").dialog("open");
+	   });
+ });
+ $(function(){
+
+ $(".test").dialog({
+		autoOpen: false, 
+		height: 550,
+		width : 550,
+		hidden : false,
+		resizable : false
+	 });
+	  $(".open_det").click(function(){
+	 	var id = $(this).attr("id");
+		 $(".test").each(function(){
+  if( this.id == id)
+ $(this).dialog("open");
+ });
+		
+	   });
+ });
+ 
+ //=======================================================================
+//=================== script de modification ============================
+//=======================================================================
+$(function(){
+	$("#dialog").dialog({
+		autoOpen: false, 
+		height: 680,
+		width : 800,
+		resizable : false
+	});
+
+	$(".open_mod").click(function(){
+		var id = $(this).attr("id");
+		//var id =  $("#"+id+" .id").text();
+		var id_p = $("#"+id+" .id_p").text();
+		var id_fr =$("#"+id+" .id_fr").text();
+		var libelle =$("#"+id+" .libelle").text();
+		var prix =$("#"+id+" .prix").text();
+		var description =$("#"+id+" .description").text();
+		var qte_stock =$("#"+id+" .qte_stock").text();
+		var photos =$("#"+id+" .photos").text();
+
+		var id_cat=$("#"+id+" .id_cat").text();
+
+		$("#id").val(id);
+		$("#id_p").val(id_p);
+		$("#id_fr").val(id_fr);
+		$("#libelle").val(libelle);
+		$("#prix").val(prix);
+		$("#description").val(description);
+		$("#qte_stock").val(qte_stock);
+		$("#photos").val(photos);
+		$("#photos1").attr({ src:photos, alt: photos });
+		$("#id_cat").val(id_cat);
+		
+		$("#dialog").dialog("open");
+	});
+})
+
+$(function(){
+	$("#dialog_rep").dialog({
+		autoOpen: false, 
+		height: 550,
+		width : 550,
+		resizable : false
+	 });
+	 
+	$(".open_rep").click(function(){
+	
+		var id = $(this).attr("id");
+		var id_email = $("#"+id+" .email3").text();
+		var id_obj = $("#"+id+" .objet3").text();
+
+
+		$("#id3").val(id);
+		$("#email3").val(id_email);
+		$("#objet3").val(id_obj);
+		
+		
+		$("#dialog_rep").dialog("open");
+	});
+			
+	   });
+		</script>
+		
+		<!-- boite de dialog reponse -->
+<div id="dialog_rep" title="Répondre au message ">
+       
+		<form  method="POST" action='send2.php' enctype="multipart/form-data">
+					
+			<p class="form-label">Email client:</p>
+			<input type="hidden"  name='id' id ="id3"/>
+					<input type="text"  name='email' id ="email3"/>
+					<p class="form-label">Objet:</p>
+					<input type="text"  name='objet' id="objet3" />
+			<p >La réponse:</p>
+			<textarea rows="4" cols="50" name="reponse">
+        
+           </textarea>
+
+		    <input type="submit" value="répondre">  <input  type="reset"   value='Renitialiser' class="button blue" />
+			       
+					
+		</form>
+</div>
+<!-- Fin boite de dialog reponse -->
+		
+     <div id="dialog" title="Modifier un produit">          
+    <form id='form1' method="POST" action='modificationOK.php'  enctype="multipart/form-data">
+	<table width="100%" align ="center" class="t" >
+			<input hidden="true"   name='id' id="id"/>
+           <tr>
+		   
+		   <td><div class="form-row">
+            <p class="form-label">Produit</p>
+            <div class="form-item"><input type="text" placeholder="Produit" disabled="true" name='id_p' id="id_p"/></div>
+           </div></td>
+		   <td><div class="form-row">
+            <p class="form-label">Fournisseur</p>
+            <div class="form-item"><input type="text" placeholder="Fournisseur" name="id_fr"  disabled="true" id="id_fr" /></div>
+           </div></td>
+		   </tr>
+		   <tr>
+		   <td><div class="form-row">
+            <p class="form-label">Libellé</p>
+            <div class="form-item"><input type="text" placeholder="Libellé" name="libelle"   id="libelle"/>
+           </div></div></td>
+           <td><div class="form-row">
+            <p class="form-label">Prix</p>
+            <div class="form-item"><input type="text" placeholder="Prix" name="prix"  id="prix"/></div>
+           </div></td>
+           <tr>
+		   <td><div class="form-row">
+            <p class="form-label">Description</p>
+            <div class="form-item"><textarea placeholder="Description" name='description'  disabled="true" cols="5" rows="3" id="description"></textarea></div>
+           </div></td>
+           <td><div class="form-row">
+            <p class="form-label">Qté Stock</p>
+            <div class="form-item"><input type ="text" placeholder="Qté en Stock" disabled="true" name='qte_stock' id="qte_stock"/></div>
+           </div></td>
+          </tr>
+		  
+			<tr>
+				           <td><img  alt="img" style="width:300px; height: 200px;" id="photos1">
+							<input type="hidden" name="image"  id="photos"></td>
+                <td><div class="form-row">
+            <p class="form-label">Catégorie</p>
+            <div class="form-item"><input type ="text" placeholder="Catégorie" disabled="true" name='id_cat' id="id_cat"/></div>
+           </div></td>
+			</tr>
+            <td>
+            <input type="submit" value="Modifier">  <input  type="reset"   value='Renitialiser' class="button blue"  /></td>
+			  <td> </td>
+	
+     </table></br>         
+			
+				</form>            
+                
+                
+                
+</div>   
+		
+        
+       <div id="dialog_aj" title="Ajouter un produit">
+       
+		<form id='form2' method="POST" action='ajoutOK.php' enctype="multipart/form-data">
+			<table width="100%" align ="center" class="t" >
+				   <tr>
+				   <td><div class="form-row">
+					<p class="form-label">Produit</p>
+					<div class="form-item"><input type="text" placeholder="Produit"  name='id_p'/></div>
+				   </div></td>
+				   <td><div class="form-row">
+					<p class="form-label">Fournisseur</p>
+					<div class="form-item"><input type="text" placeholder="Fournisseur" name="id_fr"   /></div>
+				   </div></td>
+				   </tr>
+				   <tr>
+				   <td><div class="form-row">
+					<p class="form-label">Libellé</p>
+					<div class="form-item"><input type="text" placeholder="Libellé" name="libelle"  />
+				   </div></div></td>
+				   <td><div class="form-row">
+					<p class="form-label">Prix</p>
+					<div class="form-item"><input type="text" placeholder="Prix" name="prix" /></div>
+				   </div></td>
+				   <tr>
+				   <td><div class="form-row">
+					<p class="form-label">Description</p>
+					<div class="form-item"><textarea placeholder="Description" name='description' cols="5" rows="3"></textarea></div>
+				   </div></td>
+				   <td><div class="form-row">
+					<p class="form-label">Qté Stock</p>
+					<div class="form-item"><input type ="text" placeholder="Qté en Stock" name='qte_stock' /></div>
+				   </div></td>
+				  </tr>
+				  
+					<tr>
+						<td>
+					   <div class="form-row">
+					<p cla ss="form-label">Image</p>
+					<div class="form-item"><input type="file" name="avatar">
+							<input type="hidden" name="photos"  /></div>
+				   </div>
+							 
+						</td>
+						<td><div class="form-row">
+					<p class="form-label">Catégorie</p>
+					<div class="form-item"><input type ="text" placeholder="Catégorie" name='id_cat' /></div>
+				   </div></td>
+					</tr>
+					<td>
+					<input type="submit" value="ajouter">  <input  type="reset"   value='Renitialiser' class="button blue"  /></td>
+					<td> </td>
+			
+			 </table>
+			 </br>         
+					
+		</form>
+     </div>         
+	</body>
+</html>

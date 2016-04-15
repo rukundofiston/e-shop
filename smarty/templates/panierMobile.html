@@ -1,0 +1,42 @@
+
+{include file="header.html"}
+	
+	
+<body>
+<div data-role="page">
+
+			    <div data-role="header" data-position="fixed"> 
+			    	<a href="" data-rel="back" data-role="button">Retour</a>
+					<a href="Mobileindex.php" data-role="button" rel="external">Accueil</a>
+					<h1>Bienvenu à E-Shop </h1>
+					
+				</div>										
+			<div data-role="content">
+			<form action="CommandeMobile.php" method="post">
+				<ul data-role="listview" data-inset="true" id="HotelList">
+           				{foreach $listes as $liste}
+				  			<li>				    	
+				        		<fieldset data-role="controlgroup" >				
+               						<input type="checkbox" name="b[]" id="b" value="3" />		
+				              		<label for="b">
+		                      			<img src="{$liste.photos[0]}" width="100px" heigh="100px"/>
+		                    			<label  style="float:left;padding:10px 0px 0px 10px;"> 
+					       					<h3>{$liste.libelle}</h3>
+					       					<p>{$liste.prix}</p>
+						   				</label>
+									</label>
+								</fieldset>
+				    		</li>
+	    				{/foreach}
+				</ul>
+				<input type="submit" value="Register">
+  			</form>
+			{include file="service.html"}	
+			</div><!-- /content -->
+			
+			
+			
+{include file="footer.html"}
+
+</body>
+		</html>

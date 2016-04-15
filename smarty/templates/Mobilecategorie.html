@@ -1,0 +1,53 @@
+﻿{include file="header.html"}
+		<body>
+			<div data-role="page">
+
+			    <div data-role="header" data-position="fixed"> 
+			    	<a href="" data-rel="back" data-role="button">Retour</a>
+					<a href="Mobileindex.php" data-role="button" rel="external">Accueil</a>
+					<h1>Bienvenu &agrave; E-Shop </h1>
+					
+				</div>
+					
+			<div data-role="content">	
+				<ul data-role="listview" data-theme="g">
+					<li data-role="list-divider">Choisir une cat&eacute;gorie:</li> 
+				</ul>
+				</br>
+		
+		<fieldset data-role="controlgroup">
+		<ul data-role="listview" data-theme="g" >
+			<legend></legend>
+			<input type="hidden" name="type" value="{$type}">
+			{foreach $liste as $list}
+			
+			<li>
+				        <a href="Mobilecategorie2.php?categorie={$list.id}&type={$type}" rel="external">
+				            
+				            <h3>{$list.libelle}</h3>
+							
+				        </a>
+				    </li>
+
+					{/foreach}
+
+				
+				</ul>
+		</fieldset>
+		<center>
+		
+	</form>
+	</br>
+	
+	
+	
+	
+			{include file="service.html"}	
+			</div><!-- /content -->
+			
+			
+			
+{include file="footer.html"}
+
+</body>
+		</html>

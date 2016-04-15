@@ -1,0 +1,12 @@
+/** == Mon style personnalisé == **/
+.ui-bar-w, .ui-body-w, .ui-btn-up-w {
+background:#a7a7f7;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+	.ui-icon-funny {
+		background-image: url("mon_image.png");
+		background-size: 18px 18px;
+	}
+	...
+}

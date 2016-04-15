@@ -1,0 +1,518 @@
+@font-face {
+  font-family: "interstate_mono";
+  src: url("font/interstate_mono_-_lgt-webfont.eot") format("embedded-opentype"), url("font/interstate_mono_-_lgt-webfont.ttf") format("truetype"), url("///fonts/interstate_mono_-_lgt-webfont.woff") format("woff"), url("///fonts/interstate_mono_-_lgt-webfont.svg#interstate_mono_-_lgtregular") format("svg");
+}
+
+@font-face {
+  font-family: 'droid_sansregular';
+  src: url("droidsans-webfont.eot");
+  src: url("droidsans-webfont.eot?#iefix") format("embedded-opentype"), url("droidsans-webfont.woff") format("woff"), url("droidsans-webfont.ttf") format("truetype"), url("droidsans-webfont.svg#droid_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/*Keyframes*/
+@keyframes snow {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+ 100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@-moz-keyframes snow {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@-webkit-keyframes snow {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+ 50% {background-color:#b4cfe0;}
+ 100% {background-position: 500px 1000px, 400px 400px, 300px 300px; background-color:#6b92b9;}
+}
+
+@-ms-keyframes snow {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+ 100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+body{
+	font-family: interstate_mono;
+	color: black;
+	background-color: #b31207;
+	background-image: url('../img/noel/snow.png'), url('../img/noel/snow3.png'), url('../img/noel/snow2.png');
+	
+	-webkit-animation: snow 20s linear infinite;
+	-moz-animation: snow 20s linear infinite;
+	-ms-animation: snow 20s linear infinite;
+	animation: snow 20s linear infinite;
+}
+
+
+/* Icons
+-----------------------------------------------------------------------------------------------------------*/
+
+.ui-icon,
+.ui-icon-searchfield:after {
+	background: #666666 /*{global-icon-color}*/;
+	background: rgba(0,0,0,.4) /*{global-icon-disc}*/;
+	background-image: url(../img/icons-18-white.png) /*{global-icon-set}*/;
+	background-repeat: no-repeat;
+	-moz-border-radius: 				9px;
+	-webkit-border-radius: 				9px;
+	border-radius: 						9px;
+}
+
+
+/* Alt icon color
+-----------------------------------------------------------------------------------------------------------*/
+
+.ui-icon-alt {
+	background: 						#fff;
+	background: 						rgba(255,255,255,.3);
+	background-image: url(../img/icons-18-black.png);
+	background-repeat: no-repeat;
+}
+
+/* HD/"retina" sprite
+-----------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 240dpi) {
+	
+	.ui-icon-plus, .ui-icon-minus, .ui-icon-delete, .ui-icon-arrow-r,
+	.ui-icon-arrow-l, .ui-icon-arrow-u, .ui-icon-arrow-d, .ui-icon-check,
+	.ui-icon-gear, .ui-icon-refresh, .ui-icon-forward, .ui-icon-back,
+	.ui-icon-grid, .ui-icon-star, .ui-icon-alert, .ui-icon-info, .ui-icon-home, .ui-icon-search, .ui-icon-searchfield:after, 
+	.ui-icon-checkbox-off, .ui-icon-checkbox-on, .ui-icon-radio-off, .ui-icon-radio-on {
+		background-image: url(../img/icons-36-white.png);
+		-moz-background-size: 776px 18px;
+		-o-background-size: 776px 18px;
+		-webkit-background-size: 776px 18px;
+		background-size: 776px 18px;
+	}
+	.ui-icon-alt {
+		background-image: url(../img/icons-36-black.png);
+	}
+}
+
+/* plus minus */
+.ui-icon-plus {
+	background-position: 	-0 50%;
+}
+.ui-icon-minus {
+	background-position: 	-36px 50%;
+}
+
+/* delete/close */
+.ui-icon-delete {
+	background-position: 	-72px 50%;
+}
+
+/* arrows */
+.ui-icon-arrow-r {
+	background-position: 	-108px 50%;
+}
+.ui-icon-arrow-l {
+	background-position: 	-144px 50%;
+}
+.ui-icon-arrow-u {
+	background-position: 	-180px 50%;
+}
+.ui-icon-arrow-d {
+	background-position: 	-216px 50%;
+}
+
+/* misc */
+.ui-icon-check {
+	background-position: 	-252px 50%;
+}
+.ui-icon-gear {
+	background-position: 	-288px 50%;
+}
+.ui-icon-refresh {
+	background-position: 	-324px 50%;
+}
+.ui-icon-forward {
+	background-position: 	-360px 50%;
+}
+.ui-icon-back {
+	background-position: 	-396px 50%;
+}
+.ui-icon-grid {
+	background-position: 	-432px 50%;
+}
+.ui-icon-star {
+	background-position: 	-468px 50%;
+}
+.ui-icon-alert {
+	background-position: 	-504px 50%;
+}
+.ui-icon-info {
+	background-position: 	-540px 50%;
+}
+.ui-icon-home {
+	background-position: 	-576px 50%;
+}
+.ui-icon-search,
+.ui-icon-searchfield:after {
+	background-position: 	-612px 50%;
+}
+.ui-icon-checkbox-off {
+	background-position: 	-684px 50%;
+}
+.ui-icon-checkbox-on {
+	background-position: 	-648px 50%;
+}
+.ui-icon-radio-off {
+	background-position: 	-756px 50%;
+}
+.ui-icon-radio-on {
+	background-position: 	-720px 50%;
+}
+
+
+/* checks,radios */
+.ui-checkbox .ui-icon,
+.ui-selectmenu-list .ui-icon {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.ui-icon-checkbox-off,
+.ui-icon-radio-off {
+	background-color: transparent;	
+}
+.ui-checkbox-on .ui-icon,
+.ui-radio-on .ui-icon {
+	background-color: #387bbe /*{global-active-background-color}*/; /* NOTE: this hex should match the active state color. It's repeated here for cascade */
+}
+
+/* loading icon */
+.ui-icon-loading {
+	background: url(../img/ajax-loader.gif);
+	background-size: 46px 46px;
+}
+
+.ui-bar-a {
+  background: url(../img/noel/headerPattern.png);
+}
+
+/* line 11, style.scss */
+.ui-btn-inner {
+  border-bottom : 1px solid #c2c2c2;
+}
+.ui-btn-corner-all{
+	border: none;
+}
+.ui-btn-left, .ui-btn-right, .subbutton{
+    -moz-box-shadow:inset 0px 1px 0px 0px #7a7a7a;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #7a7a7a;
+    box-shadow:inset 0px 1px 0px 0px #7a7a7a;
+    
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #66625e), color-stop(1, #363330));
+    background:-moz-linear-gradient(top, #66625e 5%, #363330 100%);
+    background:-webkit-linear-gradient(top, #66625e 5%, #363330 100%);
+    background:-o-linear-gradient(top, #66625e 5%, #363330 100%);
+    background:-ms-linear-gradient(top, #66625e 5%, #363330 100%);
+    background:linear-gradient(to bottom, #66625e 5%, #363330 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#66625e', endColorstr='#363330',GradientType=0);
+    
+    background-color:#66625e;
+    
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    
+    border:1px solid #434343;
+    
+    display:inline-block;
+    color:#ffffff;
+    font-family:arial;
+    font-size:13px;
+    font-weight:normal;
+    text-decoration:none;
+    margin-top:10px;
+    text-shadow:0px 1px 0px #000000;
+        
+}
+.ui-btn-left:hover, .ui-btn-right:hover, .subbutton:hover{
+
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #363330), color-stop(1, #66625e));
+	background:-moz-linear-gradient(top, #363330 5%, #66625e 100%);
+	background:-webkit-linear-gradient(top, #363330 5%, #66625e 100%);
+	background:-o-linear-gradient(top, #363330 5%, #66625e 100%);
+	background:-ms-linear-gradient(top, #363330 5%, #66625e 100%);
+	background:linear-gradient(to bottom, #363330 5%, #66625e 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#363330', endColorstr='#66625e',GradientType=0);
+	
+	background-color:#363330;
+}
+div.ui-btn-icon-left, .meteoValid{
+	color: white;
+	border: 1px solid #00461d;
+	border-bottom: 4px solid #00461d;
+
+	background: #006e2e; /* Old browsers */
+	background: -moz-linear-gradient(top, #006e2e 0%, #006e2e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#006e2e), color-stop(100%,#006e2e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #006e2e 0%,#006e2e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #006e2e 0%,#006e2e 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #006e2e 0%,#006e2e 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #006e2e 0%,#006e2e 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006e2e', endColorstr='#006e2e',GradientType=0 ); /* IE6-9 */
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+}
+
+div.ui-btn-icon-left:hover, .meteoValid:hover{
+	background: #006e2e; /* Old browsers */
+	background: -moz-linear-gradient(bottom, #006e2e 0%, #006e2e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, right bottom, right top, color-stop(0%,#006e2e), color-stop(100%,#006e2e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(bottom, #006e2e 0%,#006e2e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(bottom, #006e2e 0%,#006e2e 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(bottom, #006e2e 0%,#006e2e 100%); /* IE10+ */
+	background: linear-gradient(to top, #006e2e 0%,#006e2e 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006e2e', endColorstr='#006e2e',GradientType=0 ); /* IE6-9 */
+}
+div.ui-btn-icon-left:active, .meteoValid:active{
+	border: none;
+    bottom: -4px;
+    margin-bottom: 22px;
+    -webkit-box-shadow: 0 1px 1px #fff;
+    -moz-box-shadow:  0 1px 1px #fff;
+    box-shadow:  1px 1px 0 #fff, inset 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* line 16, style.scss */
+div.ui-btn-text {
+  background: #b31207 url(../img/noel/arbre.png) no-repeat right;
+  border-bottom: 1px solid #767676;
+}
+
+div.ui-btn-text:hover {
+  background: #b31207 url(../img/noel/arbre.png) no-repeat right;
+}
+
+div.ui-btn-text a{
+	text-decoration: none;
+}
+
+/* line 20, style.scss */
+.ui-li-thumb {
+  height: 100%;
+  width: 100px;
+}
+
+/* line 24, style.scss */
+.ui-li-heading {
+  color: white;
+  font-size: 1.2em;
+}
+
+/* line 28, style.scss */
+.ui-li-desc {
+  color: green;
+}
+.ui-li-divider{
+	background: #a90329; /* Old browsers */
+background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%); /* IE10+ */
+background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+	margin-bottom: 10px;
+	color: white;
+}
+
+.ui-grid-d li, .ui-grid-c li{
+	border-top: 1px solid white;
+	border-right: 1px solid white;
+}
+.ui-grid-d li:hover{
+	background: url(../img/hover.png);
+}
+a.ui-btn{
+	color: black;
+	text-decoration: none;
+}
+
+.ui-bar-c{
+	background: #fff;
+}
+.ui-radio{
+	border: 0.5px solid #d4d4d4;
+	background: url(../img/noel/motifHover.png);
+	color: #011919;
+	font-weight: bold;
+}
+.ui-radio:hover{
+	border: 0.5px solid #d4d4d4;
+	background: url(../img/noel/motif.png);
+	
+}
+.bouton{
+	margin-top: 30px;
+}
+
+.ui-select{
+	border: 0.5px solid #fff;
+	background: #fff;
+	color: #005f2f;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+}
+.selectClass{
+	color: black;
+}
+
+.motif{
+	background: url(../img/noel/motifHover.png);
+	color: #1f1f1f;
+}
+.inputcon{
+	background: #1f1f1f;
+	color: #fff;
+	border: 1px solid #fff;
+}
+.inputcon:focus{
+	background: #cecece;
+	color: #272727;
+	border: 2px solid #005f2f;
+}
+.subbutton{
+	color: #fff;
+	opacity: 1;
+	text-indent: 1px;
+	font-size: 1.1em;
+}
+.motif .ui-input-text{
+	background: #1f1f1f;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+.ui-btn-down-c{
+	background: rgb(193,193,193); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(193,193,193,1) 0%, rgba(206,206,206,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(193,193,193,1)), color-stop(100%,rgba(206,206,206,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(193,193,193,1) 0%,rgba(206,206,206,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(193,193,193,1) 0%,rgba(206,206,206,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(193,193,193,1) 0%,rgba(206,206,206,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(193,193,193,1) 0%,rgba(206,206,206,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1c1c1', endColorstr='#cecece',GradientType=0 ); /* IE6-9 */
+	cursor: pointer;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	-ms-border-radius: 25px;
+	-o-border-radius: 25px;
+	border-radius: 25px;
+	color: #002729;
+}
+.ui-controlgroup a.ui-slider-handle, a.ui-btn.ui-slider-handle{
+	background: #014464;
+	background: -moz-linear-gradient(top, #0D658E, #0C577A 50%, #014D71 51%, #003E5C);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0E658E), color-stop(.5, #0C577A), color-stop(.5, #014D71), to(#003E5C)); 
+
+	height: 28px;
+	position: absolute;
+    top: 50%;
+    width: 28px;
+    z-index: 10000;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+
+}
+
+.countText{
+	font-family: interstate_mono, sans-serif;
+	font-size: 2em;
+}
+
+#more{
+	background: url(../img/motif.png);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+	color: black;
+	font-weight: bold;
+}
+.newNotif{
+	background: url(../img/notif.png);
+	position: relative;
+	font-weight: bold;
+}
+.newNotif a{
+	color: #eccaca;
+	font-size: 1.1em;
+}
+.nbrNotif{
+	position: absolute;
+	top: -15;
+	right: 10;
+	display: block;
+	color: #fff;
+	width: 30px;
+	height: 30px;
+	font-size: 1.5em;
+	font-weight: normal;
+	font-family: droid_sansregular;
+	border: 1px solid #530000;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	border-radius: 20px;
+	text-align: center;
+	background: #530000;
+	-moz-box-shadow: inset 0px 0px 2px 0px #ffffff;
+	-webkit-box-shadow: inset 0px 0px 2px 0px #ffffff;
+	-o-box-shadow: inset 0px 0px 2px 0px #ffffff;
+	box-shadow: inset 0px 0px 2px 0px #ffffff;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#ffffff, Direction=NaN, Strength=15);
+}
+#test1{
+	color: black;
+}
+ul.ulinfo{
+	border: none;
+	background: #6bba70; /* Old browsers */
+background: -moz-linear-gradient(top, #6bba70 0%, #6bba70 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6bba70), color-stop(100%,#6bba70)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #6bba70 0%,#6bba70 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #6bba70 0%,#6bba70 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #6bba70 0%,#6bba70 100%); /* IE10+ */
+background: linear-gradient(to bottom, #6bba70 0%,#6bba70 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6bba70', endColorstr='#6bba70',GradientType=0 ); /* IE6-9 */
+}
+ul.ulinfo li{
+	border-right: 1px solid #fff;
+}
+ul.ulinfo li a{
+	color: #053b4f !important;
+}
+.ui-li-desc{
+	color: #262626;
+}
+.avatar{
+	width: 90px;
+	height: 90px;
+}
+.avatarList li{
+	list-style: none;
+	display: inline-block;
+	border: 1px solid #000;
+	margin-bottom: 10px;
+}
+.pub a{
+	background: #ff817e url(../img/noel/arbre.png) no-repeat right;
+}
